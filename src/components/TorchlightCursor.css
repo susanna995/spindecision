@@ -1,0 +1,44 @@
+
+
+   /* Hide the default cursor */
+* {
+    cursor: none;
+    position: relative;
+  }
+  
+  /* Main Cursor (Small Cursor) */
+  .main-cursor {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #ff5733; /* Main cursor color */
+    pointer-events: none;
+    z-index: 9999;
+  }
+  
+  /* Glowing Torchlight Cursor (Follows the Main Cursor) */
+  .torchlight-cursor {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 87, 51, 0.6); /* Glowing light color */
+    pointer-events: none;
+    transition: all 0.1s ease-in-out;
+    animation: glow 1s infinite ease-in-out;
+    z-index: 9998; /* Ensures the torchlight cursor is behind the main cursor */
+  }
+  
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 10px rgba(255, 87, 51, 0.8);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(255, 87, 51, 1);
+    }
+    100% {
+      box-shadow: 0 0 10px rgba(255, 87, 51, 0.8);
+    }
+  }
+  

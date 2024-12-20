@@ -1,0 +1,47 @@
+/* Container for the wheel */
+.wheel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Spinning wheel styles */
+  .wheel {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 10px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform-origin: center center;
+    transition: transform 4s ease-out;
+  }
+  
+  /* Add the segments to the wheel */
+  .segment {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: #ff6347;
+    transform-origin: 100% 100%;
+    clip-path: polygon(100% 0%, 100% 100%, 0 100%, 0 0);
+  }
+  
+  /* Spin effect */
+  .wheel.spin {
+    transform: rotate(720deg); /* Spins the wheel twice */
+  }
+  
+  /* Add a label in the center */
+  .center-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: white;
+  }
+  
